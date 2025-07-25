@@ -1,6 +1,6 @@
-{
-  "name": "Nome do Seu App",
-  "short_name": "AppNome",
+  {
+  "name": "Tecnologia Sem Mistérios",
+  "short_name": "TSM",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -18,3 +18,4 @@
     }
   ]
 }
+

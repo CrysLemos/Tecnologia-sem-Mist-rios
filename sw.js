@@ -1,13 +1,14 @@
-const CACHE_NAME = "meu-pwa-cache-v1";
+const CACHE_NAME = "tsm-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/styles.css",
+  "/assets/css/main.css",
+  "/manifest.json",
   "/icons/icon-192.png",
   "/icons/icon-512.png"
 ];
 
-// Instala o service worker e faz cache dos arquivos
+// Instala o Service Worker e armazena os arquivos em cache
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
@@ -16,7 +17,7 @@ self.addEventListener("install", event => {
   );
 });
 
-// Responde às requisições com o cache (offline)
+// Intercepta requisições e responde com cache se estiver offline
 self.addEventListener("fetch", event => {
   event.respondWith(
     caches.match(event.request).then(response => {
@@ -24,3 +25,4 @@ self.addEventListener("fetch", event => {
     })
   );
 });
+
